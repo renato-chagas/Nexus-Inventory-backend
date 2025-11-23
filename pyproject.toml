@@ -1,0 +1,20 @@
+[project]
+name = "Nexus-Inventory-backend"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "renato-chagas", email = "renatochagas.m@gmail.com"},
+]
+dependencies = ["django>=5.2.8"]
+requires-python = "==3.13.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
+ 
+[tool.pdm.scripts]
+dev = "python src/manage.py runserver"
+migrate = "python src/manage.py migrate"
+makemigrations = "python src/manage.py makemigrations"
