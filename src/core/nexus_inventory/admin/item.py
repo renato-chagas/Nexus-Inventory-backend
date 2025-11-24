@@ -1,0 +1,8 @@
+from django.contrib import admin
+
+from core.nexus_inventory.models import Item
+
+@admin.register(Item)
+class ItemAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'serial_number', 'status', 'bought_price', 'bought_date', 'category', 'person_in_charge')
+    search_fields = ('name', 'serial_number', 'status', 'category', 'person_in_charge')
