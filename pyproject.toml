@@ -2,19 +2,29 @@
 name = "Nexus-Inventory-backend"
 version = "0.1.0"
 description = "Default template for PDM package"
-authors = [
-    {name = "renato-chagas", email = "renatochagas.m@gmail.com"},
+authors = [{ name = "renato-chagas", email = "renatochagas.m@gmail.com" }]
+dependencies = [
+    "django>=5.2.8",
+    "djangorestframework>=3.16.1",
+    "django-cors-headers>=4.9.0",
+    "djangorestframework-simplejwt>=5.5.1",
+    "pillow>=12.0.0",
+    "python-magic>=0.4.27; sys_platform == \"linux\"",
+    "python-magic-bin>=0.4.14",
+    "drf-spectacular>=0.29.0",
+    "python-dotenv>=1.2.1",
+    "netifaces>=0.11.0",
 ]
-dependencies = ["django>=5.2.8", "djangorestframework>=3.16.1"]
 requires-python = "==3.13.*"
 readme = "README.md"
-license = {text = "MIT"}
+license = { text = "MIT" }
 
 
 [tool.pdm]
 distribution = false
- 
+
 [tool.pdm.scripts]
 dev = "python src/manage.py runserver"
 migrate = "python src/manage.py migrate"
 makemigrations = "python src/manage.py makemigrations"
+createsuperuser = "python src/manage.py createsuperuser"
