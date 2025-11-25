@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 import os
 
-from dotenv import load_dotenv 
+from dotenv import load_dotenv
 
 load_dotenv()  # Load environment variables from .env file
 
@@ -27,12 +27,12 @@ MODE = os.getenv("MODE")
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = os.getenv("DEBUG", "False") == "True"
-ALLOWED_HOSTS = [os.getenv("ALLOWED_HOSTS", "*").aplit()]
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:8000",
-    "http://127.0.0.1:8000"
-    "http://localhost:3000"
+    "http://127.0.0.1:8000",
+    "http://localhost:3000",
 ]
 
 # Application definition
@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "core.usuario",
+    "core.user",
     "core.uploader",
     "core.nexus_inventory",
     "corsheaders",
@@ -94,7 +94,7 @@ CORS_ALLOW_METHODS = [
 ]
 
 # Custom User Model
-AUTH_USER_MODEL = "usuario.Usuario"
+AUTH_USER_MODEL = "user.User"
 
 TEMPLATES = [
     {

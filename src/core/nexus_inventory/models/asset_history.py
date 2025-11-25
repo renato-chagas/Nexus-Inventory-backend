@@ -1,8 +1,6 @@
 from django.db import models 
 
 from .employee import Employee
-# criar usuario
-# from core.nexus_inventory.user.models import User
 
 class AssetHistory(models.Model):
     action_date = models.DateTimeField(auto_now_add=True)

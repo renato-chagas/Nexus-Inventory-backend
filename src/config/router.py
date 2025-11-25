@@ -1,7 +1,7 @@
 from rest_framework.routers import DefaultRouter
 
 from core.nexus_inventory import views as inventory_views
-from core.usuario.router import router as usuario_router
+from core.user.router import router as usuario_router
 from core.uploader.router import router as uploader_router
 
 router = DefaultRouter()

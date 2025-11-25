@@ -1,9 +1,9 @@
 from rest_framework.serializers import ModelSerializer, SlugRelatedField
 
-from .models import Usuario
+from .models import User
 
 
-class UsuarioSerializer(ModelSerializer):
+class UserSerializer(ModelSerializer):
     class Meta:
-        model = Usuario
+        model = User
         fields = "__all__"

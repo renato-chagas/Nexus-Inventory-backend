@@ -2,7 +2,7 @@ from rest_framework.routers import DefaultRouter
 
 from . import views
 
-app_name = "usuario"
+app_name = "user"
 
 router = DefaultRouter()
-router.register("users", views.UsuarioViewSet)
+router.register("users", views.UserViewSet)

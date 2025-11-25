@@ -5,7 +5,7 @@ from django.utils.translation import gettext_lazy as _
 from .managers import CustomUserManager
 
 
-class Usuario(AbstractUser):
+class User(AbstractUser):
     username = None
     email = models.EmailField(_("e-mail address"), unique=True)
     cpf = models.CharField(_("CPF"), max_length=11, blank=True, null=True)

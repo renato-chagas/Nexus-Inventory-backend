@@ -3,14 +3,14 @@ from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext_lazy as _
 
 from .forms import CustomUserChangeForm, CustomUserCreationForm
-from .models import Usuario
+from .models import User
 
 
-@admin.register(Usuario)
+@admin.register(User)
 class CustomUserAdmin(UserAdmin):
     add_form = CustomUserCreationForm
     form = CustomUserChangeForm
-    model = Usuario
+    model = User
     list_display = (
         "email",
         "is_staff",

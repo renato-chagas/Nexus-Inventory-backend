@@ -1,7 +1,7 @@
 from django.apps import AppConfig
 
 
-class UsuarioConfig(AppConfig):
+class UserConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
     # Caminho completo correto do app dentro de src/core
-    name = "core.usuario"
+    name = "core.user"
