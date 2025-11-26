@@ -39,4 +39,3 @@ class AssetListSerializer(ModelSerializer):
     class Meta:
         model = Asset
         fields = ['id', 'name', 'serial_number', 'status', 'Image']
-    
