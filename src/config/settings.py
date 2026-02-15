@@ -30,9 +30,9 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
 
 CSRF_TRUSTED_ORIGINS = [
-    'http://localhost:8000',
-    'http://127.0.0.1:8000',
-    'http://localhost:3000',
+    "http://localhost:8000",
+    "http://127.0.0.1:8000",
+    "http://localhost:3000",
 ]
 
 # Application definition
@@ -66,8 +66,14 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "config.urls"
 
-# Permited Routes
-CORS_ALLOW_ALL_ORIGINS = DEBUG
+
+# CORS settings para permitir frontend local
+CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
+CORS_ALLOW_CREDENTIALS = True
 
 # cors headers settings
 
@@ -121,6 +127,10 @@ REST_FRAMEWORK = {
     ],
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.IsAuthenticated",
+    ],
+    "DEFAULT_RENDERER_CLASSES": [
+        "rest_framework.renderers.JSONRenderer",
+        "rest_framework.renderers.BrowsableAPIRenderer",
     ],
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
@@ -185,8 +195,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
-
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
+# STATIC_ROOT deve ser usado apenas em produção. Comente ou remova em dev.
+# STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
