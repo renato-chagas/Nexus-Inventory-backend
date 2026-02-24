@@ -30,7 +30,7 @@ class AssetDetailSerializer(ModelSerializer):
     class Meta:
         model = Asset
         fields = '__all__'
-        depth = 1
+        depth = 2
     
         
 class AssetListSerializer(ModelSerializer):
@@ -38,4 +38,5 @@ class AssetListSerializer(ModelSerializer):
     
     class Meta:
         model = Asset
-        fields = ['id', 'name', 'serial_number', 'status', 'Image']
+        depth=1
+        fields = ['id', 'name','person_in_charge', 'serial_number', 'status', 'Image']
