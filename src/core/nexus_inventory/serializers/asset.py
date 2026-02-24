@@ -39,4 +39,4 @@ class AssetListSerializer(ModelSerializer):
     class Meta:
         model = Asset
         depth=1
-        fields = ['id', 'name','person_in_charge', 'serial_number', 'status', 'Image']
+        fields = ['id', 'name','person_in_charge', 'serial_number', 'status', 'Image', 'installed_software',]
